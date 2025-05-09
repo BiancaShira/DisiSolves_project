@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<form action="" method="post">
+<form action="/disisolves/admin/problems/<id>/edit" method="post">
     <label for="title">Title </label> <br>
     <input value="{{request.form['title']}}" name="title" class="border-2 border-gray-700" type="text" id="title"><br><br>
     <label for="description">Description </label> <br>

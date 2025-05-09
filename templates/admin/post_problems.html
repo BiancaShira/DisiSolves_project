@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-    Create Problems 
+ Post Problems 
 {% endblock %}
 {% block content %}
 {% for message in get_flashed_messages() %}
@@ -9,7 +9,7 @@
 </div>
   
 {% endfor %}
-    <form action="/disisolves/admin/problems/create" method="post">
+    <form action="/disisolves/admin/problems/post" method="post">
         <label for="title">Title </label> <br>
         <input value="{{request.form['title']}}" name="title" class="border-2 border-gray-700" type="text" id="title"><br><br>
         <label for="description">Description </label> <br>

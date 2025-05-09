@@ -1,14 +1,11 @@
 from flask import Flask , render_template , request ,flash , url_for , redirect, request
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import func
 from utils.software_types import Software_types
 from datetime import datetime
-from flask_login import UserMixin
-from flask_login import login_user
-from flask_login import login_manager
-from flask_login import LoginManager, login_required, current_user
-from flask import request, redirect, url_for, render_template, flash
-from flask_login import login_user
+from flask_login import UserMixin, login_user, login_manager, LoginManager, login_required, current_user 
+
 
 
 
@@ -68,9 +65,10 @@ def login():
         remember = True if request.form.get("remember") else False
 
         user = User.query.filter_by(username=username).first()
+        check_password_hash = User.query.filter_by(password=password).first()
 
 
-        if not user and not check_password_hash(user.password, password):
+        if not user or not check_password_hash:
             flash("Please check your login details and try again.")
             return redirect(url_for("login"))
 
@@ -85,7 +83,7 @@ def login():
 def admin_dashboard():
     return render_template("./admin/admin_dashboard.html", username = current_user.username)
 
-@app.route("/disisolves/admin/problems/create" , methods=["GET" , "POST"])
+@app.route("/disisolves/admin/problems/post" , methods=["GET" , "POST"])
 def create_problems():
     if request.method == "POST":
         title = request.form.get('title')
@@ -112,7 +110,7 @@ def create_problems():
             db.session.commit()
 
             return redirect("/")
-    return render_template("admin/create_problems.html")
+    return render_template("admin/post_problems.html")
 
 
 @app.route("/disisolves/problems/<id>")
@@ -123,7 +121,7 @@ def problem_details(id):
 
 
 @app.route("/disisolves/admin/problems/<id>/edit")
-def update_problem(id):
+def update_problem():
     return render_template("admin/update_problem.html")
 
 
@@ -133,15 +131,15 @@ class Problems(db.Model):
     description =db.Column(db.Text , nullable = False)
     software_types =db.Column(db.Enum(Software_types) , nullable = False)
     posted_by =db.Column(db.Text , nullable = False)
-    posted_at = db.Column(db.DateTime, default = datetime.astimezone)
+    posted_at =db.Column(db.DateTime(), index=True, default=datetime.now)
 
 with app.app_context():
     db.create_all()
 
-class User(db.Model, UserMixin):
+class Users(db.Model, UserMixin):
      id = db.Column(db.Integer , primary_key=True)
      username =db.Column(db.String(20) , nullable = False, unique = True)
-     password=db.Column(db.String(10), nullable = False)
+     password=db.Column(db.String(20), nullable = False)
 
 with app.app_context():
     db.create_all()
