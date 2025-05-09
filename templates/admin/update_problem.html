@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Update Problem
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    <label for="title">Title </label> <br>
+    <input value="{{request.form['title']}}" name="title" class="border-2 border-gray-700" type="text" id="title"><br><br>
+    <label for="description">Description </label> <br>
+    <textarea value="{{request.form['description']}}"  name="description" id="description"></textarea> <br><br>
+    <label for="software_types">Software Types:</label>
+    <select  name="software_types" id="software_types"><br>
+        <option value="OMNISCAN">Omniscan</option>
+        <option value="SOFTRAC">Softtrac</option>
+        <option value="SCANNERS">Scanners</option>
+    </select><br><br>
+    <button type="submit">Update</button>
+
+    
+</form>
+    
+{% endblock %}

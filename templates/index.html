@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    homepage
+{% endblock %}
+{% block content %}
+    <h1>Problems/Issues</h1>
+   {% for problem in problems %}
+    <a href="/disisolves/problems/{{problem.id}}" style="display: block; font-size: 20px; margin-bottom: 12px;">
+        {{problem.title}} - {{problem.description}}
+    </li>
+   {% endfor %}
+{% endblock %}

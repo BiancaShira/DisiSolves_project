@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{problem.title}}
+{% endblock %}
+
+
+
+{% block content %}
+    <h1>Problem Detail</h1>
+
+    <h2>{{problem.title}}</h2>
+    <p>{{problem.description}}</p>
+
+    <a href="/disisolves/problems/{{problem.id}}/edit">update Problem</a>
+{% endblock %}

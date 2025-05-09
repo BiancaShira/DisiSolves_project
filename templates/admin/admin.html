@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DisiSolves</title>
+</head>
+
+<body>
+    <section class="hero is-primary is-fullheight">
+
+        <div>
+            <nav class="navbar" >
+                        <ul>
+                            <li><a href="{{ url_for('index') }}">
+                                Home
+                            </a></li>
+                            <li><a href="{{ url_for('login') }}">
+                                Login
+                            </a></li>
+                            <li><a href="{{ url_for('register') }}">
+                                Register
+                            </a></li>
+                        </ul>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+            <div class="container has-text-centered">
+               {% block content %}
+               {% endblock %}
+            </div>
+        </div>
+    </section>
+</body>
+<style>
+              nav{
+                            display: flex;
+                            text-decoration: none;
+                            justify-content: space-between;
+                            align-items: center;
+                            color: green;
+
+
+              }
+              a{
+                            color: black;
+                            text-decoration: none;
+              }
+              ul{
+                           display: flex;
+                           gap: 12px;
+              }
+              a:hover{
+                            color: greenyellow;
+                            transition: all .5s;
+              }
+              li{
+
+                            color: rgb(255, 255, 255);
+                            text-align: center;
+                            border-radius: 12px;
+                            font-size: 18px;
+                            font-weight: 700;
+                            text-decoration: none;
+                            list-style: none;
+
+
+                            }  
+</style>
+</html>
