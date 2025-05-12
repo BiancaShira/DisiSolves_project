@@ -7,10 +7,18 @@
 
 
 {% block content %}
-    <h1>Problem Detail</h1>
+    <h1 class="text-center">Problem Detail</h1>
+    <h2>{{problem.problem_title}}</h2>
+    <br>
+    <h2>Description</h2>
+    <p>{{problem.problem_description}}</p>
+    <br>
+    <h2>Solution</h2>
+    <p>{{problem.solution}}/</p>
+    <br>
+    <h2>Image</h2>
+    <br><br>
+    <p>posted on : {{problem.posted_at}} by: {{problem.posted_by}}</p>
 
-    <h2>{{problem.title}}</h2>
-    <p>{{problem.description}}</p>
-
-    <a href="/disisolves/problems/{{problem.id}}/edit">update Problem</a>
+    <a href="/problems/{{problem.id}}/edit">update Problem</a>
 {% endblock %}

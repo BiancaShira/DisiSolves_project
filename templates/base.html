@@ -1,25 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chicle&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <title>DiSiSolves - {% block title %}{% endblock %}</title>
-</head>
-<body class="font-[Rubik] text-gray-800">
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+              <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+              <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+              <title>{% block title %}
+                {% endblock %}</title>
+          </head>
+          <body class="font-[Rubik] text-gray-800 color: #355B11">
+                  <!-- color: #355B11 -->
+                  <div class="flex h-screen w-full p-6">
+                      <div class="border-r-[0.6px] border-gray-400">
+          
+                          <div class="mb-8 font-[Chicle] text-2xl font-bold text-[#355B11]">
+                              DisiSolves
+                          
+                          </div>
+          
+                          <div id="sidebar-list-items-container" class="flex flex-col justify-between ">
+          
+                              <ul class="flex flex-col  gap-5 text-[16px] font-[400] px-6">
+                                  <li class="flex gap-2 text-[#355B11] font-bold border-r-2-[#355B11]">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                      <a href="{{ url_for ('index') }}">Home</a>
+                                  </li>
+                                  <li class="flex gap-2">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-alert-icon lucide-badge-alert"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                                      <a href="">Problems</a>
+                                  </li>
+                                  <li class="flex gap-2">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
+                                      <a href="">Lastest Issues</a>
+                                  </li>
+          
+                                  <ul>
+                                      <li class="flex gap-2">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
+                                          <a href="">Lastest Issues</a>
+                                      </li>
+                                  </ul>
+                              </ul>
+          
+                      
+          
+                          </div>
+                      </div>
+          
+                      <div class="w-[80%]">
+          
+                          <nav class="flex justify-between p-4">
+                              <div class="text-2xl font-bold text-[#355B11] font-[Chicle]">
+                                  DisiSolves
+                              </div>
+                              <ul class="flex gap-4">
+                                <li class="text-[#355B11] font-bold border-b-3"><a href="">Home</a></li>
+                                <li><a href="" class="hover:border-b-3  transition-all delay-100">Problems</a></li>
+                                <li><a href="" class="hover:border-b-3 transition-all delay-100">Contact</a></li>
+                                
+                              </ul>
+                          </nav>
+                          {%block content%}
+                          <!-- <div class="px-4 ">
+                              <div class="p-6">
+                                  <a href="" class="text-[#555C11] font-bold text-2xl">Problem details</a>
+                                  <div class="text-[#333] font-normal leading-7 text-lg">
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt repudiandae non optio totam nobis placeat odit? In, ad dolor voluptates animi sint sit laboriosam assumenda magni fugiat neque aut.
+                                  </div>
+                              </div> -->
+
+
+                            
+                              <!-- <div class="p-6">
+                                  <a href="" class="text-[#555C11] font-bold text-2xl">Lorem ipsum, dolor sit amet consectetu consectetu consectetu</a>
+                                  <div class="text-[#333] font-normal leading-7 text-lg">
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt repudiandae non optio totam nobis placeat odit? In, ad dolor voluptates animi sint sit laboriosam assumenda magni fugiat neque aut.
+                                  </div>
+                              </div>
+          
+                              <div class="p-6">
+                                  <a href="" class="text-[#555C11] font-bold text-2xl">Lorem ipsum, dolor sit amet consectetu consectetu consectetu</a>
+                                  <div class="text-[#333] font-normal leading-7 text-lg">
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt repudiandae non optio totam nobis placeat odit? In, ad dolor voluptates animi sint sit laboriosam assumenda magni fugiat neque aut.
+                                  </div>
+          
+                                  <div class="mt-2">
+                                      <span class="bg-[#5C5511]  px-2  py-1 text-sm font-bold ml-2 text-white inline-block">critical</span>
+                                      <span>scanner</span>
+                                  </div>
+                              </div>
+          
+                              <div class="p-6">
+                                  <a href="" class="text-[#555C11] font-bold text-2xl">Lorem ipsum, dolor sit amet consectetu consectetu consectetu</a>
+                                  <div class="text-[#333] font-normal leading-7 text-lg">
+                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt repudiandae non optio totam nobis placeat odit? In, ad dolor voluptates animi sint sit laboriosam assumenda magni fugiat neque aut.
+                                  </div>
+                              </div>
+           -->
+           {%endblock%}
+          
+                          </div>
+
+                      </div>
+                  </div>
+          
+            
+                  
+              </div>
+          
+          </body>
        
-    
-                {% block content %}
-    
-                {% endblock %}
+
         
-    </div>
- 
-</body>
-</html>

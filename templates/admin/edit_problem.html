@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Update Problem
+{% endblock %}
+
+{% block content %}
+
+<form action="/admin/problems/<id>/edit" method="post">
+    <label for="problem_title">Title </label> <br>
+    <input value="{{request.form['problem_title']}}" name="problem_title" class="border-2 border-gray-700" type="text" id="problem_title"><br><br>
+    <label for="problem_description">Description </label> <br>
+    <textarea value="{{request.form['description']}}"  name="problem_description" id="problem_description"></textarea> <br><br>
+    <label for="software_types">Software Types:</label>
+    <select  name="software_types" id="software_types"><br>
+        <option value="OMNISCAN">Omniscan</option>
+        <option value="SOFTRAC">Softtrac</option>
+        <option value="SCANNERS">Scanners</option>
+    </select><br><br>
+    <label for="solution">Description </label> <br>
+    <textarea value="{{request.form['solution']}}"  name="solution" id="solution"></textarea> <br><br>
+    <button type="submit">Update</button>
+
+    
+</form>
+    
+{% endblock %}

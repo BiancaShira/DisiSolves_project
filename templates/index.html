@@ -4,10 +4,20 @@
     homepage
 {% endblock %}
 {% block content %}
-    <h1>Problems/Issues</h1>
+    <h1 class="font-bold text-xl text-center">Problems/Issues</h1>
    {% for problem in problems %}
-    <a href="/disisolves/problems/{{problem.id}}" style="display: block; font-size: 20px; margin-bottom: 12px;">
-        {{problem.title}} - {{problem.description}}
-    </li>
+       <div class="px-4 ">
+                              <div class="p-6">
+                                  <a href="/problems/{{problem.id}}" class="text-[#555C11] font-bold text-2xl">{{problem.problem_title}}</a>
+                                  <div class="text-[#333] font-normal leading-7 text-lg">
+                                     {{problem.problem_description}}
+                                  </div>
+                                  <div class="mt-2">
+                                          <span class="bg-[#5C5511]  px-2  py-1 text-sm font-bold ml-2 text-white inline-block">Soft-trac</span>
+                                          <span>Omniscan</span>
+                                          <span>Scanners</span>
+                                      </div>
+                              </div>
+       </div>
    {% endfor %}
 {% endblock %}

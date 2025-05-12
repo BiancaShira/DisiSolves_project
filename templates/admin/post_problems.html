@@ -5,23 +5,25 @@
 {% block content %}
 {% for message in get_flashed_messages() %}
 <div>
-   {{message}}
-</div>
-  
+    {{message}}
+ </div>
 {% endfor %}
-    <form action="/disisolves/admin/problems/post" method="post">
-        <label for="title">Title </label> <br>
-        <input value="{{request.form['title']}}" name="title" class="border-2 border-gray-700" type="text" id="title"><br><br>
-        <label for="description">Description </label> <br>
-        <textarea value="{{request.form['description']}}"  name="description" id="description"></textarea> <br><br>
+    <form action="/admin/problems/post" method="post">
+        <label for="problem_title">Title </label> <br>
+        <input value="{{request.form['problem_title']}}" name="problem_title" class="border-2 border-gray-700" type="text" id="problrm_title"><br><br>
+        <label for="problem_description">Description </label> <br>
+        <textarea value="{{request.form['problem_description']}}"  name="problem_description" id="problem_description"></textarea> <br><br>
         <label for="software_types">Software Types:</label>
         <select  name="software_types" id="software_types"><br>
             <option value="OMNISCAN">Omniscan</option>
             <option value="SOFTRAC">Softtrac</option>
             <option value="SCANNERS">Scanners</option>
         </select><br><br>
+        <label for="solution">Solution</label> <br>
+        <textarea value="{{request.form['solution']}}"  name="solution" id="solution"></textarea> <br><br>
         <button type="submit">Submit</button>
 
         
     </form>
+
 {% endblock %}

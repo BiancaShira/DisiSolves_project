@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+
+{% block title %}
+Problems
+{% endblock %}
+
+{% block content %}
+{%for problems in problems%}
+{{problems.id}} <br>
+<h1>title</h1>
+{{problems.problem_title}} <br>
+<h1>description</h1>
+{{problems.problem_description}} <br>
+    {%endfor%}
+{%endblock%}
