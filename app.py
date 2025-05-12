@@ -136,7 +136,7 @@ class Problems(db.Model):
 with app.app_context():
     db.create_all()
 
-class Users(db.Model, UserMixin):
+class User(db.Model, UserMixin):
      id = db.Column(db.Integer , primary_key=True)
      username =db.Column(db.String(20) , nullable = False, unique = True)
      password=db.Column(db.String(20), nullable = False)
