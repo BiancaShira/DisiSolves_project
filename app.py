@@ -8,6 +8,7 @@ from flask_login import UserMixin, login_user, login_manager, LoginManager, logi
 
 
 
+UPLOADFOLDER = './storage'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql://root:@localhost:3306/disisolves"
@@ -145,8 +146,7 @@ class Problems(db.Model):
     posted_by =db.Column(db.Text , nullable = False)
     posted_at =db.Column(db.DateTime(), index=True, default=datetime.now)
 
-with app.app_context():
-    db.create_all()
+
 
 class User(db.Model, UserMixin):
      id = db.Column(db.Integer , primary_key=True)
