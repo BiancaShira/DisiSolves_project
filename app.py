@@ -97,7 +97,8 @@ def login():
 def admin_dashboard():
     return render_template("./admin/admin_dashboard.html", username = current_user.username)
 
-@app.route("/admin/problems/post" , methods=["GET" , "POST"])
+@app.route("/admin/dashboard/problems/post" , methods=["GET" , "POST"])
+@login_required
 def post_problems():
     if request.method == "POST":
         problem_title = request.form.get('problem_title')
@@ -123,13 +124,17 @@ def post_problems():
                 problem_description = problem_description,
                 software_types = software_types,
                 solution = solution,
-                posted_by = "Bianca"
+                posted_by = current_user.username
             ))
 
             db.session.commit()
 
             return redirect("/")
     return render_template("admin/post_problems.html")
+
+@app.route("/feedback")
+def feedback():
+    return render_template("feedback.html")
 
 class Problems(db.Model):
     id = db.Column(db.Integer , primary_key=True)

@@ -28,19 +28,21 @@
                                   </li>
                                   <li class="flex gap-2">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-alert-icon lucide-badge-alert"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
-                                      <a href="">Problems</a>
+                                      <a href="/problems">Problems</a>
                                   </li>
                                   <li class="flex gap-2">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
-                                      <a href="">Lastest Issues</a>
+                                      <a href="">FAQs</a>
                                   </li>
-          
-                                  <ul>
                                       <li class="flex gap-2">
                                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
                                           <a href="">Lastest Issues</a>
                                       </li>
-                                  </ul>
+                                      <li class="flex gap-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg>
+                                        <a href="/feedback">Feedback</a>
+                                    </li>
+                                  
                               </ul>
           
                       
@@ -55,8 +57,13 @@
                                   DisiSolves
                               </div>
                               <ul class="flex gap-4">
-                                <li class="text-[#355B11] font-bold border-b-3"><a href="">Home</a></li>
-                                <li><a href="" class="hover:border-b-3  transition-all delay-100">Problems</a></li>
+                                <li>
+                                    <form action="/search" method="GET">
+                                      <input type="text" name="query" placeholder="Search here..." />
+                                      <button type="submit">Search</button>
+                                    </form></li>
+                                <li class="text-[#355B11] font-bold border-b-3"><a href="{{url_for('index')}}">Home</a></li>
+                                <li><a href="{{url_for('problems')}}" class="hover:border-b-3  transition-all delay-100">Problems</a></li>
                                 <li><a href="" class="hover:border-b-3 transition-all delay-100">Contact</a></li>
                                 
                               </ul>

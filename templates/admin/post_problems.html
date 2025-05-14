@@ -8,7 +8,7 @@
     {{message}}
  </div>
 {% endfor %}
-    <form action="/admin/problems/post" method="post">
+    <form action="/admin/dashboard/problems/post" method="post">
         <label for="problem_title">Title </label> <br>
         <input value="{{request.form['problem_title']}}" name="problem_title" class="border-2 border-gray-700" type="text" id="problrm_title"><br><br>
         <label for="problem_description">Description </label> <br>
